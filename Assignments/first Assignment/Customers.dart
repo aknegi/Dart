@@ -2,25 +2,28 @@
 
 void main()
 {
- 
-
-var CustAddress= [[{"Gaziabad","PushpVihar"},{"Dwarka","Rohini"}],[{"Pitampura"},{"Dwarka"}],[{"Saket"},
-{"Gurugram"}],[{"Rk Puram","NehruPlace"},{"Noida","Banglore"}]];
-
+ //List of Customers name
 var NameOfCustomers=["Amit","Suraj","Kapil","Sachin"];
 
+// CustAddress is List of Customer's address that contains, List elements of two sets, 
+ //first set is Customer's Residential Address and second set is Customer's Office Address
+var CustAddress= [  [{"Gaziabad","PushpVihar"},{"Dwarka","Rohini"}]  , [{"Pitampura"},{"Dwarka"}],[{"Saket"},{"Gurugram"}]  ,
+                    [{"Rk Puram","NehruPlace"},{"Noida","Banglore"}]];
 
+// Mapping Customer name to Customer's Address
 Map<String,List> Customer={NameOfCustomers[0]:CustAddress[0],NameOfCustomers[1]:CustAddress[1],
-NameOfCustomers[2]:CustAddress[2],NameOfCustomers[0]:CustAddress[3]};
+                           NameOfCustomers[2]:CustAddress[2],NameOfCustomers[0]:CustAddress[3]};
 
-
-var OrderList=[{"101":[["Samsung TV",30000],["Boat Airdrops",2250]]} ,{"102":[["ASUS",4022],["PUMA",500]] },
-    {"103":[["HP Laptop",55500],["shoe",900]]},{"104":[["Casio",6000],["Almond Oil",300]]}];
-
+//OrderList is a list of cutomer's orders, Each order have a map of Id and list of products
+//products have name and amount
+var OrderList= [  {"101":[["Samsung TV",30000],["Boat Airdrops",2250]]}   ,   {"102":[["ASUS",4022],["PUMA",500]]}  ,
+                 {"103":[["HP Laptop",55500],["shoe",900]]},    {"104":[["Casio",6000],["Almond Oil",300]]}   ] ;
+ 
+// Mapping Customers name to Customer's Orders
 Map<String,List> CustomerOrders={NameOfCustomers[0]:[OrderList[1],OrderList[0]],NameOfCustomers[1]:[OrderList[2]],
-NameOfCustomers[2]:[OrderList[3]]};
+                                 NameOfCustomers[2]:[OrderList[3]]};
 
-
+//sorting OrderList by the amount of Produts
 for(int i=0;i<OrderList.length;i++)
   {
     var map=OrderList[i];
@@ -50,6 +53,8 @@ for(int i=0;i<OrderList.length;i++)
       }
     });
   }
+ 
+ //printitng all the summery
    print(Customer);
    print(CustomerOrders);
 }
